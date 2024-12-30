@@ -5,10 +5,8 @@ import com.NVBWCho.vehichleRegister.delficonform.typebased.bustypes.bodytypes.Bo
 import com.NVBWCho.vehichleRegister.delficonform.typebased.services.BodyTypeService;
 import com.NVBWCho.vehichleRegister.delficonform.typebased.services.BusDoorTypeService;
 import com.NVBWCho.vehichleRegister.delficonform.typebased.services.LinebusService;
-import com.NVBWCho.vehichleRegister.delficonform.typebased.services.RampTypeService;
-import com.NVBWCho.vehichleRegister.services.experimental.RampService;
-import com.NVBWCho.vehichleRegister.services.delfiservices.BusService;
-import com.NVBWCho.vehichleRegister.services.delfiservices.DelfiBusDoorService;
+import com.NVBWCho.vehichleRegister.delficonform.typebased.services.BusRampTypeService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,8 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class VehichleRegisterApplication implements CommandLineRunner {
 
-	@Autowired
-	private RampService rampService;
+
 
 	@Autowired
 
@@ -29,7 +26,7 @@ public class VehichleRegisterApplication implements CommandLineRunner {
 
 
 	@Autowired
-	private RampTypeService rampTypeService;
+	private BusRampTypeService busRampTypeService;
 
 
 	@Autowired
@@ -41,12 +38,14 @@ public class VehichleRegisterApplication implements CommandLineRunner {
 
 
 
-	@Autowired
-	private DelfiBusDoorService delfiBusDoorService;
 
 
-	@Autowired
-	private BusService busService;
+
+
+
+
+
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(VehichleRegisterApplication.class, args);
@@ -76,11 +75,11 @@ public class VehichleRegisterApplication implements CommandLineRunner {
 
 		//delfiBusDoorService.createTestDoors();
 
-		rampTypeService.createTestRampType();
+		busRampTypeService.createTestRampType();
 
 
 
-		busService.createTesBus();
+
 
 
 

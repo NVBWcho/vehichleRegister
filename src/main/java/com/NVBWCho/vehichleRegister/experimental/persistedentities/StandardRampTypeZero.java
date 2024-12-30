@@ -1,6 +1,6 @@
 package com.NVBWCho.vehichleRegister.experimental.persistedentities;
 
-import com.NVBWCho.vehichleRegister.experimental.ramp.BusRamp;
+import com.NVBWCho.vehichleRegister.experimental.ramp.BusRampTest;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +14,7 @@ import lombok.Setter;
 
 
 
-public class StandardRampTypeZero extends BusRamp {
+public class StandardRampTypeZero extends BusRampTest {
 
 
 

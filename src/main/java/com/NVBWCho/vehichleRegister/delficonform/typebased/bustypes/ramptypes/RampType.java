@@ -28,6 +28,18 @@ public abstract class RampType {
     private Integer maxWeight_D3123;
 
 
+    @Column
+    private Boolean internalRamp_D3124;
+
+
+    public Boolean getInternalRamp_D3124() {
+        return internalRamp_D3124;
+    }
+
+    public void setInternalRamp_D3124(Boolean internalRamp_D3124) {
+        this.internalRamp_D3124 = internalRamp_D3124;
+    }
+
     public Long getId() {
         return id;
     }

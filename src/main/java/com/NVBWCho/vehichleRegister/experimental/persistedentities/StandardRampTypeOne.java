@@ -1,6 +1,6 @@
 package com.NVBWCho.vehichleRegister.experimental.persistedentities;
 
-import com.NVBWCho.vehichleRegister.experimental.ramp.BusRamp;
+import com.NVBWCho.vehichleRegister.experimental.ramp.BusRampTest;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.Getter;
@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class StandardRampTypeOne extends BusRamp {
+public class StandardRampTypeOne extends BusRampTest {
 
     public StandardRampTypeOne(){
         super();

@@ -1,12 +1,15 @@
 package com.NVBWCho.vehichleRegister.delficonform.typebased.services;
 
 import com.NVBWCho.vehichleRegister.delficonform.typebased.busobjects.BusDoor;
+import com.NVBWCho.vehichleRegister.delficonform.typebased.busobjects.BusRamp;
 import com.NVBWCho.vehichleRegister.delficonform.typebased.bustypes.Linebus;
 import com.NVBWCho.vehichleRegister.delficonform.typebased.bustypes.bodytypes.BodyType;
 import com.NVBWCho.vehichleRegister.delficonform.typebased.bustypes.doortypes.BusDoorType;
 import com.NVBWCho.vehichleRegister.delficonform.typebased.bustypes.doortypes.concreteimplementations.StandardCiceroDoor;
+import com.NVBWCho.vehichleRegister.delficonform.typebased.bustypes.ramptypes.RampType;
 import com.NVBWCho.vehichleRegister.delficonform.typebased.repositories.BodyTypeRepository;
 import com.NVBWCho.vehichleRegister.delficonform.typebased.repositories.BusDoorRepository;
+import com.NVBWCho.vehichleRegister.delficonform.typebased.repositories.BusRampTypeRepository;
 import com.NVBWCho.vehichleRegister.delficonform.typebased.repositories.LinebusRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +35,9 @@ public class LinebusService {
 
     private BusDoorTypeService busDoorTypeService;
 
+    @Autowired
+    private BusRampTypeService busRampTypeService;
+
 
     @Autowired
 
@@ -48,6 +54,18 @@ public class LinebusService {
         busDoors.add(busDoor);
         busDoors.add(busDoor1);
 
+        BusRamp busRamp=new BusRamp();
+        Optional<RampType> rampType=busRampTypeService.getRamptypeById(1L);
+
+        busRamp.setRampType(rampType.get());
+
+        List<BusRamp> ramps=new ArrayList<>();
+        ramps.add(busRamp);
+
+
+
+
+
         BusDoorType busDoorType=busDoorTypeService.getBusDoorTypeById(1L);
 
         busDoor.setBusDoorType(busDoorType);
@@ -58,11 +76,14 @@ public class LinebusService {
         // setting the bi-directional relationships explicitly
 
         linebus.setDoors(busDoors);
+        linebus.setRamps(ramps);
 
         busDoor.setLinebus(linebus); // Set Linebus in BusDoor
         busDoor1.setLinebus(linebus);
 
-        Linebus linebus1=new Linebus();
+        busRamp.setLinebus(linebus);
+
+
 
 
         linebus.setBodyType(bodyType);

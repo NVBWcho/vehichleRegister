@@ -1,6 +1,6 @@
 package com.NVBWCho.vehichleRegister.experimental.door;
 
-import com.NVBWCho.vehichleRegister.experimental.ramp.BusRamp;
+import com.NVBWCho.vehichleRegister.experimental.ramp.BusRampTest;
 
 import java.util.Optional;
 
@@ -16,7 +16,7 @@ public class ExampleDoorOne extends BusDoor {
 
     private Integer distanceToBusHead;
 
-    public ExampleDoorOne (String id, Optional<BusRamp> exampleRampOne,Integer distanceToBusHead){
+    public ExampleDoorOne (String id, Optional<BusRampTest> exampleRampOne, Integer distanceToBusHead){
 
 
 

@@ -2,6 +2,7 @@ package com.NVBWCho.vehichleRegister.delficonform.typebased.bustypes;
 
 
 import com.NVBWCho.vehichleRegister.delficonform.typebased.busobjects.BusDoor;
+import com.NVBWCho.vehichleRegister.delficonform.typebased.busobjects.BusRamp;
 import com.NVBWCho.vehichleRegister.delficonform.typebased.bustypes.bodytypes.BodyType;
 import jakarta.persistence.*;
 
@@ -33,6 +34,17 @@ public class Linebus {
     @OneToMany(mappedBy = "linebus",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 
     private List<BusDoor> doors;
+
+    public List<BusRamp> getRamps() {
+        return ramps;
+    }
+
+    public void setRamps(List<BusRamp> ramps) {
+        this.ramps = ramps;
+    }
+
+    @OneToMany(mappedBy = "linebus",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private List<BusRamp> ramps;
 
     public Long getId() {
         return id;

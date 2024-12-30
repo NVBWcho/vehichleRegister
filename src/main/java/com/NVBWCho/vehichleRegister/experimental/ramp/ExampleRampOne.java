@@ -1,6 +1,6 @@
 package com.NVBWCho.vehichleRegister.experimental.ramp;
 
-public class ExampleRampOne extends BusRamp {
+public class ExampleRampOne extends BusRampTest {
 
     public  ExampleRampOne (Long id){
         super();

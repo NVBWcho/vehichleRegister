@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="ramp_type",discriminatorType = DiscriminatorType.STRING)
-public abstract class BusRamp {
+public abstract class BusRampTest {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

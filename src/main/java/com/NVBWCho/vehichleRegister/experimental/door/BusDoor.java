@@ -1,6 +1,6 @@
 package com.NVBWCho.vehichleRegister.experimental.door;
 
-import com.NVBWCho.vehichleRegister.experimental.ramp.BusRamp;
+import com.NVBWCho.vehichleRegister.experimental.ramp.BusRampTest;
 
 import java.util.Optional;
 
@@ -64,11 +64,11 @@ public abstract class BusDoor {
         isEquippedWithRamp = equippedWithRamp;
     }
 
-    public Optional<BusRamp> getAttachedRamp() {
+    public Optional<BusRampTest> getAttachedRamp() {
         return attachedRamp;
     }
 
-    public void setAttachedRamp(Optional<BusRamp> attachedRamp) {
+    public void setAttachedRamp(Optional<BusRampTest> attachedRamp) {
         this.attachedRamp = attachedRamp;
     }
 
@@ -90,7 +90,7 @@ public abstract class BusDoor {
 
     private boolean isEquippedWithRamp;
 
-    private Optional<BusRamp> attachedRamp;
+    private Optional<BusRampTest> attachedRamp;
     private  Optional<String> doorname;
 
     public  BusDoor(){
