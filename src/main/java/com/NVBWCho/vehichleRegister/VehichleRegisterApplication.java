@@ -1,6 +1,11 @@
 package com.NVBWCho.vehichleRegister;
 
-import com.NVBWCho.vehichleRegister.delficonform.bus.Bus;
+import com.NVBWCho.vehichleRegister.delficonform.typebased.bustypes.Linebus;
+import com.NVBWCho.vehichleRegister.delficonform.typebased.bustypes.bodytypes.BodyType;
+import com.NVBWCho.vehichleRegister.delficonform.typebased.services.BodyTypeService;
+import com.NVBWCho.vehichleRegister.delficonform.typebased.services.BusDoorTypeService;
+import com.NVBWCho.vehichleRegister.delficonform.typebased.services.LinebusService;
+import com.NVBWCho.vehichleRegister.delficonform.typebased.services.RampTypeService;
 import com.NVBWCho.vehichleRegister.services.experimental.RampService;
 import com.NVBWCho.vehichleRegister.services.delfiservices.BusService;
 import com.NVBWCho.vehichleRegister.services.delfiservices.DelfiBusDoorService;
@@ -9,13 +14,29 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Optional;
-
 @SpringBootApplication
 public class VehichleRegisterApplication implements CommandLineRunner {
 
 	@Autowired
 	private RampService rampService;
+
+	@Autowired
+
+	private BodyTypeService bodyTypeService;
+
+	@Autowired
+	private LinebusService linebusService;
+
+
+	@Autowired
+	private RampTypeService rampTypeService;
+
+
+	@Autowired
+
+	private BusDoorTypeService busDoorTypeService;
+
+
 
 
 
@@ -55,11 +76,40 @@ public class VehichleRegisterApplication implements CommandLineRunner {
 
 		//delfiBusDoorService.createTestDoors();
 
+		rampTypeService.createTestRampType();
+
+
+
 		busService.createTesBus();
 
-		Optional<Bus> bus=busService.getBusById(1L);
 
-		delfiBusDoorService.getTypeOneDoorsByBusId(1L);
+
+		//Optional<Bus> bus=busService.getBusById(1L);
+
+		//delfiBusDoorService.getTypeOneDoorsByBusId(1L);
+
+		bodyTypeService.createTestBusBody();
+
+		BodyType bodyType=bodyTypeService.getBodyTypeByBodyId(1L);
+
+		busDoorTypeService.createTestDoorType();
+
+
+
+		System.out.println(bodyType);
+
+		linebusService.createTestBus();
+
+		Linebus linebus= linebusService.getLineBusById(1L);
+
+		System.out.println(linebus);
+
+
+
+
+		busDoorTypeService.getExistingDoorTypes();
+
+
 
 
 
