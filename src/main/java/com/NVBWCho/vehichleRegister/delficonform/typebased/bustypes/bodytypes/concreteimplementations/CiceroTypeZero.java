@@ -31,6 +31,7 @@ public class CiceroTypeZero extends BodyType {
         this.setVehichlePlanAvailable_D3010(true);
 
 
+
     }
 
 

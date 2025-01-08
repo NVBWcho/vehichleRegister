@@ -23,6 +23,7 @@ public class CiceroTypeOne extends BodyType {
         this.setInformationDisplayInternal_D3020(true);
         this.setLoudspeakerAutomatic_D3030(true);
         this.setLoudSpeakerManual_D3031(true);
+
         this.setMinimumHeightOfFloorFromGround_D3100(5);
         this.setTicketMachineAvailable_D3070(false);
         this.setVehichlePlanAvailable_D3010(true);
